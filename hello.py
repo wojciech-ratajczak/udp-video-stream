@@ -1,0 +1,1 @@
+print("Test pythona raz dwa trzy")
