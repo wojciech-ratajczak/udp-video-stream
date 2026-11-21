@@ -1,0 +1,1 @@
+##to do: on i off pipeline nadawcy z pyjtona, subprocess.Popen
