@@ -3,15 +3,15 @@
 
 import subprocess
 
-HOST = "127.0.0.1"  #127 loopback
+HOST = "192.168.1.71"  #127.0.0.1 to był loopback
 PORT = 5006
 
 
 #zrodlo testowe dla PC:
-ZRODLO = " videotestsrc ! videoconvert"
+##ZRODLO = " videotestsrc ! videoconvert"
 
 #zrodlo dla laptopa omarchy:
-#ZRODLO = " v4l2src device=/dev/video0 ! image/jpeg,width=1280,height=720,framerate=30/1 ! jpegdec ! videoconvert"
+ZRODLO = " v4l2src device=/dev/video0 ! image/jpeg,width=1280,height=720,framerate=30/1 ! jpegdec ! videoconvert"
 
 argumentgstreamer = "video/x-raw,format=NV12,width=1280,height=720,framerate=30/1 ! x264enc tune=zerolatency bitrate=2000 speed-preset=ultrafast key-int-max=30 bframes=0 sliced-threads=true ! rtph264pay config-interval=1 pt=96 mtu=1200 ! udpsink host=" + HOST + " port=" +str(PORT) +" sync=false"
 
